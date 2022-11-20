@@ -1,0 +1,54 @@
+Image_1:
+  crop_bottom: 200
+  crop_left: 0
+  crop_right: 0
+  crop_top: 0
+  icx: -63.599999999999994
+  icy: 1.0
+  map_x_anypoint: ../data_config/map_x_anypoint_image_0.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_0.npy
+  rotate: 0.7
+  shift_x: 0
+  shift_y: 0
+  zoom: 4.580000000000001
+Image_2:
+  crop_bottom: 0
+  crop_left: 0
+  crop_right: 294
+  crop_top: 0
+  icx: -61.0
+  icy: 0.0
+  map_x_anypoint: ../data_config/map_x_anypoint_image_1.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_1.npy
+  rotate: -2.6
+  shift_x: 55
+  shift_y: 656
+  zoom: 3.34
+Image_3:
+  crop_bottom: 0
+  crop_left: 350
+  crop_right: 0
+  crop_top: 0
+  icx: -62.0
+  icy: 3.0
+  map_x_anypoint: ../data_config/map_x_anypoint_image_2.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_2.npy
+  rotate: 3.5
+  shift_x: -20
+  shift_y: 645
+  zoom: 3.14
+Image_4:
+  crop_bottom: 0
+  crop_left: 0
+  crop_right: 0
+  crop_top: 288
+  icx: -58.8
+  icy: -3.0
+  map_x_anypoint: ../data_config/map_x_anypoint_image_3.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_3.npy
+  rotate: -5.8
+  shift_x: -31
+  shift_y: 821
+  zoom: 3.92
+camera_placement: center
+camera_used: 4

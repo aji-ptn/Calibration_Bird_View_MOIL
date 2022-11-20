@@ -1,0 +1,94 @@
+from PyQt6 import QtCore
+from .view_additional_function import select_file
+
+
+class UiVideoController:
+    def __init__(self, view_controller):
+        self.view_controller = view_controller
+
+        self.__timer = QtCore.QTimer()
+        self.__timer.timeout.connect(self.showing_to_ui)
+
+        self.view_controller.main_ui.button_open_file_video.clicked.connect(self.select_source_video)
+        self.view_controller.main_ui.btn_play_pause.clicked.connect(self.onclick_play_pause_video)
+        self.view_controller.main_ui.btn_stop_video.clicked.connect(self.onclick_stop_video)
+        self.view_controller.main_ui.button_change_view.clicked.connect(self.showing_to_ui)
+        self.view_controller.main_ui.slider_video.valueChanged.connect(self.change_value_slider)
+        self.view_controller.main_ui.btn_skip_video.clicked.connect(self.view_controller.controller.control_video.forward_video)
+        self.view_controller.main_ui.btn_prev_video.clicked.connect(self.view_controller.controller.control_video.rewind_video)
+
+        self.view_controller.main_ui.button_update_properties.clicked.connect(self.record_bird_view_video)
+
+    def select_source_video(self):
+        self.view_controller.controller.control_video.initialize_video_data()
+        for i in range(self.view_controller.model.total_camera_used):
+            filepath_video = select_file(None, "Select video", "", "*.avi *.mp4")
+            if filepath_video:
+                self.view_controller.controller.control_video.running_video(i, filepath_video)
+            else:
+                break
+
+        # try:
+        # self.view_controller.controller.control_video.update_properties_anypoint()
+
+        # self.view_controller.controller.
+
+        self.view_controller.controller.update_properties_anypoint()
+        self.showing_to_ui()
+
+        # except:
+        #     print("Not enough video resources")
+
+    def onclick_play_pause_video(self):
+        """
+        This function will control the video player such as playing and pausing the video
+        when clicking a button in the user interface
+        """
+        if self.view_controller.main_ui.btn_play_pause.isChecked():
+            # self.view_controller.controller.control_video.update_properties_anypoint()
+            self.__timer.start()
+            status = "play"
+        else:
+            status = "pause"
+            self.__timer.stop()
+        self.view_controller.set_icon.set_icon_video_play_pause(status)
+
+    def change_value_slider(self, value):
+        value_max = self.view_controller.main_ui.slider_video.maximum()
+        self.view_controller.controller.control_video.slider_controller(value, value_max)
+        self.showing_to_ui()
+
+    def onclick_stop_video(self):
+        self.__timer.stop()
+        self.view_controller.controller.control_video.stop_video()
+        self.showing_to_ui()
+        self.view_controller.main_ui.btn_play_pause.setChecked(False)
+        self.view_controller.set_icon.set_icon_video_play_pause("begin")
+
+    def showing_to_ui(self):
+        self.view_controller.show_to_window.showing_video_result()
+        # self.set_value_slider_video()
+        self.set_value_timer_video()
+
+    def set_value_slider_video(self):
+        value = self.view_controller.main_ui.slider_video.maximum()
+        current_position = self.view_controller.controller.control_video.get_value_slider_video(value)
+        self.view_controller.main_ui.slider_video.blockSignals(True)
+        self.view_controller.main_ui.slider_video.setValue(current_position)
+        self.view_controller.main_ui.slider_video.blockSignals(False)
+
+    def set_value_timer_video(self):
+        total_minute, current_minute, total_second, current_second = self.view_controller.controller.control_video.get_time_video()
+        self.view_controller.main_ui.label_time_recent.setText("%02d : %02d" % (current_minute, current_second))
+        self.view_controller.main_ui.label_time_end.setText("%02d : %02d" % (total_minute, total_second))
+
+    def record_bird_view_video(self):
+        if self.view_controller.main_ui.button_update_properties.isChecked():
+
+            self.view_controller.controller.control_video.initial_record()
+            self.view_controller.controller.control_video.record = True
+            print("start record")
+        else:
+            self.view_controller.controller.control_video.record = False
+            print("helo from record")
+

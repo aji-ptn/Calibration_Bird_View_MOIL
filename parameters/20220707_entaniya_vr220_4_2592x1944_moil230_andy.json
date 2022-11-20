@@ -1,0 +1,17 @@
+{
+  "cameraName": "entaniya_vr220_4_2592x1944",
+  "cameraSensorWidth": 1.4,
+  "cameraSensorHeight": 1.4,
+  "iCx": 1306,
+  "iCy": 968,
+  "ratio": 1,
+  "imageWidth": 2592,
+  "imageHeight": 1944,
+  "calibrationRatio": 1,
+  "parameter0": 0,
+  "parameter1": 0,
+  "parameter2": 0,
+  "parameter3": -74.149,
+  "parameter4":  159.32,
+  "parameter5": 489.27
+}
