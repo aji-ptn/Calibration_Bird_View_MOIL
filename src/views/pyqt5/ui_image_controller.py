@@ -17,20 +17,25 @@ class UiImageController:
             self.view_controller.calib_properties.initialize_properties()
             self.view_controller.control_widget.initial_toolbox_configuration()
 
-#             image = ["/home/anto/Documents/create-dataset-birds-view/images/1/image0.jpg",
-#                      "/home/anto/Documents/create-dataset-birds-view/images/1/image1.jpg",
-#                      "/home/anto/Documents/create-dataset-birds-view/images/1/image2.jpg",
-#                      "/home/anto/Documents/create-dataset-birds-view/images/1/image3.jpg"]
-            path_image = ["/home/aji/Documents/MyGithub/OpenCV_bird_view_main/for_sequence/image3-front.jpg",
-                          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/for_sequence/image2_left.jpg",
-                          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/for_sequence/image4_right.jpg",
-                          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/for_sequence/image1_rear.jpg"]
+            # image = ["/home/aji/Documents/MyGithub/OpenCV_bird_view_main/11192022/123/image3.jpg",
+            #          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/11192022/123/image2.jpg",
+            #          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/11192022/123/image4.jpg",
+            #          "/home/aji/Documents/MyGithub/OpenCV_bird_view_main/11192022/123/image1.jpg"]
+            # parameters = [
+            #     "../parameters/20220803_entaniya_vr220_12_2592x1944_moil230_heru.json",
+            #     "../parameters/20220818_entaniya_vr220_14_2592x1944_moil230_heru_andy.json",
+            #     "../parameters/20220803_entaniya_vr220_11_2592x1944_moil230_heru.json",
+            #     "../parameters/20220818_entaniya_vr220_13_2592x1944_moil230_heru.json"]
 
-            parameters = [
-                "../parameters/20220803_entaniya_vr220_12_2592x1944_moil230_heru.json",
-                "../parameters/20220818_entaniya_vr220_14_2592x1944_moil230_heru_andy.json",
-                "../parameters/20220818_entaniya_vr220_13_2592x1944_moil230_heru.json",
-                "../parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json"]
+            image = ["/home/aji/Documents/MyGithub/calib_bird_view_MOIL/1/front_true_.jpg",
+                     "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/1/left_true_.jpg",
+                     "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/1/right_true_.jpg",
+                     "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/1/back_true_.jpg"]
+
+            parameters = ["/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json",
+                          "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json",
+                          "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json",
+                          "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json"]
 
             for i in range(self.view_controller.model.total_camera_used):
                 # filepath_image = select_file(None, "Select Image !!", "",

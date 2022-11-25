@@ -150,12 +150,12 @@ def rear_image_overlap(image, shift_x, shift_y, properties_image):
                              properties_image["Image_4"]["crop_right"]
     pos_x_rear_right_finish = image[3].shape[1]
 
-    if shift_x[2] < -500:
-        pos_x_right_start = 0
-        pos_x_right_finish = image[2].shape[1]
-
-        pos_x_rear_right_start = image[3].shape[1] - image[2].shape[1] - abs(500 + shift_x[2]) - shift_x[3]
-        pos_x_rear_right_finish = pos_x_rear_right_start + image[2].shape[1]
+    # if shift_x[2] < -500:
+    #     pos_x_right_start = 0
+    #     pos_x_right_finish = image[2].shape[1]
+    #
+    #     pos_x_rear_right_start = image[3].shape[1] - image[2].shape[1] - abs(500 + shift_x[2]) - shift_x[3]
+    #     pos_x_rear_right_finish = pos_x_rear_right_start + image[2].shape[1]
 
     if total_off_img_2 > total_off_img_3:
         pos_y_right_start = image[2].shape[0] - shift_y[3] - abs(offset) - \
