@@ -2,53 +2,53 @@ Image_1:
   crop_bottom: 115
   crop_left: 0
   crop_right: 0
-  crop_top: 0
+  crop_top: 947
   icx: -77.5
-  icy: -1.7000000000000006
+  icy: -1.7
   map_x_anypoint: ../data_config/map_x_anypoint_image_0.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_0.npy
   rotate: 0.7
   shift_x: 0
   shift_y: 0
-  zoom: 5.379999999999995
+  zoom: 5.38
 Image_2:
   crop_bottom: 0
-  crop_left: 188
+  crop_left: 621
   crop_right: 139
   crop_top: 0
-  icx: -79.19999999999997
-  icy: 1.6
+  icx: -79.2
+  icy: 1.7
   map_x_anypoint: ../data_config/map_x_anypoint_image_1.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_1.npy
-  rotate: -3.800000000000001
-  shift_x: 0
+  rotate: -3.8
+  shift_x: 428
   shift_y: 670
   zoom: 3.34
 Image_3:
   crop_bottom: 0
   crop_left: 60
-  crop_right: 415
+  crop_right: 764
   crop_top: 0
-  icx: -81.60000000000001
+  icx: -81.6
   icy: 0.1
   map_x_anypoint: ../data_config/map_x_anypoint_image_2.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_2.npy
   rotate: 1.6
-  shift_x: -86
+  shift_x: -435
   shift_y: 604
   zoom: 4.04
 Image_4:
-  crop_bottom: 0
+  crop_bottom: 876
   crop_left: 0
   crop_right: 0
   crop_top: 154
-  icx: -69.40000000000006
+  icx: -69.4
   icy: 3.6
   map_x_anypoint: ../data_config/map_x_anypoint_image_3.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_3.npy
-  rotate: 2.1000000000000014
-  shift_x: 41
+  rotate: 2.1
+  shift_x: 27
   shift_y: 421
-  zoom: 4.500000000000001
+  zoom: 4.5
 camera_placement: center
 camera_used: 4

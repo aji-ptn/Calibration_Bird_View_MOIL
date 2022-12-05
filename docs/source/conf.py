@@ -13,11 +13,12 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('../../src'))
+print(os.getcwd())
+sys.path.insert(0, os.path.abspath('../../src/'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Calibration Birds view'
+project = 'Calibration Birds view MOIL Method'
 copyright = '2022, Moil-MCUT'
 author = 'Moil-MCUT'
 
@@ -31,9 +32,10 @@ release = '1.0'
 # ones.
 extensions = ["sphinx.ext.autodoc",
               "sphinx.ext.viewcode",
-              "sphinx.ext.napoleon"
-              ]
+              "sphinx.ext.napoleon",
 
+              "m2r2"
+              ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -57,7 +59,7 @@ html_static_path = []
 master_doc = 'index'
 
 autoclass_content = 'both'
-autodoc_mock_imports = ["Moildev"]
+autodoc_mock_imports = ["src"]
 html_show_sourcelink = False
 
 autodoc_default_flags = ['members']

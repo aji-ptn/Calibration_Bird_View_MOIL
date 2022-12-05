@@ -1,0 +1,71 @@
+Image_1:
+  crop_bottom: 920
+  crop_left: 0
+  crop_right: 0
+  crop_top: 0
+  front_left: []
+  icx: 1295
+  icy: 1522
+  map_x_anypoint: ../data_config/map_x_anypoint_image_0.npy
+  map_x_panorama: ../data_config/map_x_panorama_image_0.npy
+  map_x_reverse: ../data_config/map_x_reverse_image_0.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_0.npy
+  map_y_panorama: ../data_config/map_y_panorama_image_0.npy
+  map_y_reverse: ../data_config/map_y_reverse_image_0.npy
+  rotate: -0.9
+  shift_x: 0
+  shift_y: 0
+  zoom: 7.0
+Image_2:
+  crop_bottom: 0
+  crop_left: 150
+  crop_right: 800
+  crop_top: 0
+  icx: 1285
+  icy: 1565
+  map_x_anypoint: ../data_config/map_x_anypoint_image_1.npy
+  map_x_panorama: ../data_config/map_x_panorama_image_1.npy
+  map_x_reverse: ../data_config/map_x_reverse_image_1.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_1.npy
+  map_y_panorama: ../data_config/map_y_panorama_image_1.npy
+  map_y_reverse: ../data_config/map_y_reverse_image_1.npy
+  rotate: 2.7
+  shift_x: 711
+  shift_y: 841
+  zoom: 6.64
+Image_3:
+  crop_bottom: 0
+  crop_left: 850
+  crop_right: 0
+  crop_top: 0
+  icx: 1310
+  icy: 1588
+  map_x_anypoint: ../data_config/map_x_anypoint_image_2.npy
+  map_x_panorama: ../data_config/map_x_panorama_image_2.npy
+  map_x_reverse: ../data_config/map_x_reverse_image_2.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_2.npy
+  map_y_panorama: ../data_config/map_y_panorama_image_2.npy
+  map_y_reverse: ../data_config/map_y_reverse_image_2.npy
+  rotate: -1.6
+  shift_x: -556
+  shift_y: 861
+  zoom: 6.16
+Image_4:
+  crop_bottom: 0
+  crop_left: 0
+  crop_right: 0
+  crop_top: 928
+  icx: 1298
+  icy: 1520
+  map_x_anypoint: ../data_config/map_x_anypoint_image_3.npy
+  map_x_panorama: ../data_config/map_x_panorama_image_3.npy
+  map_x_reverse: ../data_config/map_x_reverse_image_3.npy
+  map_y_anypoint: ../data_config/map_y_anypoint_image_3.npy
+  map_y_panorama: ../data_config/map_y_panorama_image_3.npy
+  map_y_reverse: ../data_config/map_y_reverse_image_3.npy
+  rotate: -0.8
+  shift_x: 150
+  shift_y: 615
+  zoom: 8.46
+camera_placement: center
+camera_used: 4
