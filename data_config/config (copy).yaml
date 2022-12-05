@@ -3,8 +3,8 @@ Image_1:
   crop_left: 0
   crop_right: 0
   crop_top: 947
-  icx: -77.5
-  icy: -1.7
+  alpha: -77.5
+  beta: -1.7
   map_x_anypoint: ../data_config/map_x_anypoint_image_0.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_0.npy
   rotate: 0.7
@@ -16,8 +16,8 @@ Image_2:
   crop_left: 621
   crop_right: 139
   crop_top: 0
-  icx: -79.2
-  icy: 1.7
+  alpha: -79.2
+  beta: 1.7
   map_x_anypoint: ../data_config/map_x_anypoint_image_1.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_1.npy
   rotate: -3.8
@@ -29,8 +29,8 @@ Image_3:
   crop_left: 60
   crop_right: 764
   crop_top: 0
-  icx: -81.6
-  icy: 0.1
+  alpha: -81.6
+  beta: 0.1
   map_x_anypoint: ../data_config/map_x_anypoint_image_2.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_2.npy
   rotate: 1.6
@@ -42,8 +42,8 @@ Image_4:
   crop_left: 0
   crop_right: 0
   crop_top: 154
-  icx: -69.4
-  icy: 3.6
+  alpha: -69.4
+  beta: 3.6
   map_x_anypoint: ../data_config/map_x_anypoint_image_3.npy
   map_y_anypoint: ../data_config/map_y_anypoint_image_3.npy
   rotate: 2.1

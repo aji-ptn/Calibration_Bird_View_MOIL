@@ -8,7 +8,7 @@ def merge_original_image(image_ori):
         image_ori: list of original image
 
     Returns:
-
+    merge_image_canvas : image original combination
     """
     if len(image_ori) == 1:
         height = image_ori[0].shape[0]

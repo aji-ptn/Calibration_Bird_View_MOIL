@@ -31,7 +31,6 @@ class UiShowResult:
                                 self.width_overlay_image)
             show_image_to_label(self.view_controller.main_ui.label_window_birds_view, image_birds_view,
                                 self.width_bird_view_image)
-            self.view_controller.toolbox_activation()
 
     def show_image_to_label(self):
         """

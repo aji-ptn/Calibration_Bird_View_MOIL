@@ -5,15 +5,17 @@ from .gradient_class import create_blending
 
 def find_overlap_front_left_center(image, shift_x, shift_y, properties_image):
     """
-
+    This function is for find overlapping image between image front and left image
     Args:
-        image:
-        shift_x:
-        shift_y:
-        properties_image:
+        image: image front and image left
+        shift_x: movement image in x direction
+        shift_y: movement image in y direction
+        properties_image: configuration image
 
     Returns:
-
+        overlay : image overlap
+        bg_image : image background
+        fg_image : image foreground
     """
     if shift_y[1] - properties_image["Image_2"]["crop_top"] > 0:
         # crop left and right front is still some problems exist
@@ -55,15 +57,17 @@ def find_overlap_front_left_center(image, shift_x, shift_y, properties_image):
 
 def find_overlap_front_right_center(image, shift_x, shift_y, properties_image):
     """
-
+        this function is for find overlapping image between image front and right
     Args:
-        image:
-        shift_x:
-        shift_y:
+        image: image front and image right
+        shift_x: movement image in x-axis
+        shift_y: movement image in y-axis
         properties_image:
 
     Returns:
-
+        overlay : image overlap
+        bg_image : image background
+        fg_image : image foreground
     """
     if shift_y[2] - properties_image["Image_3"]["crop_top"] > 0:
         pos_y_bg_start = image[0].shape[0] - shift_y[2] + properties_image["Image_3"]["crop_top"]
@@ -105,15 +109,20 @@ def find_overlap_front_right_center(image, shift_x, shift_y, properties_image):
 
 def rear_image_overlap(image, shift_x, shift_y, properties_image):
     """
-
+        this function is for find overlap between image rear, left, and right
     Args:
-        image:
-        shift_x:
-        shift_y:
-        properties_image:
+        image: image rear, left and right
+        shift_x: movement image in x-axis
+        shift_y: movement image in y-axis
+        properties_image: configuration image
 
     Returns:
-
+        overlay_left_rear
+        overlay_right_rear
+        left_image
+        rear_left_image
+        right_image
+        rear_right_image
     """
     total_off_img_2 = properties_image["Image_2"]["crop_top"] + properties_image["Image_2"]["crop_bottom"] + shift_y[1]
     total_off_img_3 = properties_image["Image_3"]["crop_top"] + properties_image["Image_3"]["crop_bottom"] + shift_y[2]

@@ -3,6 +3,16 @@ import numpy as np
 
 
 def crop_region(img, name, gradient_mode=None):
+    """
+        This function is for crop image between two images
+    Args:
+        img: image input
+        name: command for witch image will crop
+        gradient_mode: command for mode crop image
+
+    Returns:
+        image: region cropping image
+    """
     if name == "front_left":
         if gradient_mode == "H":
             # -------------- Horizontal -----------------
@@ -113,6 +123,16 @@ def crop_region(img, name, gradient_mode=None):
 
 
 def region_bounding(img, name, pts):
+    """
+    This function is for create image cropping with black background
+    Args:
+        img: image input
+        name: command for witch image will process
+        pts: point of bounding
+
+    Returns:
+    image with black background
+    """
     rect = cv2.boundingRect(pts)
     x, y, w, h = rect
     cropped = img[y:y + h, x:x + w].copy()
@@ -165,6 +185,18 @@ def region_bounding(img, name, pts):
 
 
 def crop_for_gradient_front_left(image_1, image_2):
+    """
+    Crop image for diagonal overlap front left
+    Args:
+        image_1: image front
+        image_2: image left
+
+    Returns:
+        pos_x: position in image x
+        pos_y: position in image y
+        image_1: crop image front
+        image_2: crop image left
+    """
     minimum = min(image_1.shape[1], image_2.shape[1], image_1.shape[0], image_2.shape[0])
     pos_x = max(image_1.shape[1], image_2.shape[1]) - minimum
     pos_y = max(image_1.shape[0], image_2.shape[0]) - minimum
@@ -180,6 +212,18 @@ def crop_for_gradient_front_left(image_1, image_2):
 
 
 def crop_for_gradient_front_right(image_1, image_2):
+    """
+    Crop image for diagonal overlap front right
+    Args:
+        image_1: image front
+        image_2: image right
+
+    Returns:
+        pos_x: position in image x
+        pos_y: position in image y
+        image_1: crop image front
+        image_2: crop image right
+    """
     minimum = min(image_1.shape[1], image_2.shape[1], image_1.shape[0], image_2.shape[0])
     pos_x = max(image_1.shape[1], image_2.shape[1]) - minimum
     pos_y = max(image_1.shape[0], image_2.shape[0]) - minimum
@@ -195,6 +239,18 @@ def crop_for_gradient_front_right(image_1, image_2):
 
 
 def crop_for_gradient_rear_left(image_1, image_2):
+    """
+    Crop image for diagonal overlap rear left
+    Args:
+        image_1: image rear
+        image_2: image left
+
+    Returns:
+        pos_x: position in image x
+        pos_y: position in image y
+        image_1: crop image rear
+        image_2: crop image left
+    """
     minimum = min(image_1.shape[1], image_2.shape[1], image_1.shape[0], image_2.shape[0])
     pos_x = max(image_1.shape[1], image_2.shape[1]) - minimum
     pos_y = max(image_1.shape[0], image_2.shape[0]) - minimum
@@ -210,6 +266,18 @@ def crop_for_gradient_rear_left(image_1, image_2):
 
 
 def crop_for_gradient_rear_right(image_1, image_2):
+    """
+    Crop image for diagonal overlap rear right
+    Args:
+        image_1: image rear
+        image_2: image right
+
+    Returns:
+        pos_x: position in image x
+        pos_y: position in image y
+        image_1: crop image rear
+        image_2: crop image right
+    """
     minimum = min(image_1.shape[1], image_2.shape[1], image_1.shape[0], image_2.shape[0])
     pos_x = max(image_1.shape[1], image_2.shape[1]) - minimum
     pos_y = max(image_1.shape[0], image_2.shape[0]) - minimum

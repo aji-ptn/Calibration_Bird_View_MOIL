@@ -3,11 +3,20 @@ import numpy as np
 
 
 def create_blending(img1, img2):
+    """
+        This function is for process two image overlapping with same size to create image gradient
+    Args:
+        img1: image first
+        img2: image second
+
+    Returns:
+        gradient image
+    """
     G0, M0 = get_weight_mask_matrix(img1, img2)
 
     weights = [np.stack((G, G, G), axis=2) for G in (G0, G0, G0, G0)]
-    end = (img1 * weights[0] + img2 * (1 - weights[0])).astype(np.uint8)
-    return end
+    gradient_image = (img1 * weights[0] + img2 * (1 - weights[0])).astype(np.uint8)
+    return gradient_image
 
 
 def get_weight_mask_matrix(im1, im2, dist_threshold=1):

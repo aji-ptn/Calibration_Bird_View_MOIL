@@ -7,6 +7,20 @@ from .crop_gradient_center_config import crop_for_gradient_front_left, crop_for_
 
 
 def merge_image_4_camera_center_config(image_crop, properties_image, shift_x, shift_y, gradient_mode, sources="Image"):
+    """
+        This function is for process 4 images into 1 images bird view
+    Args:
+        image_crop: image anypoint that have been crop
+        properties_image: image configuration
+        shift_x: move image to x direction
+        shift_y: move image to y direction
+        gradient_mode: image gradient of two overlap image
+        sources: can choices image or video
+
+    Returns:
+        merge_image_canvas : image bird view overlap
+        bird_view : bird view image
+    """
     keys = list(properties_image)
 
     # create canvas for showing image

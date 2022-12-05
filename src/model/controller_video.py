@@ -7,23 +7,13 @@ from threading import Thread
 from datetime import datetime
 
 
-class VStream:
-    def __init__(self, src):
-        self.capture = cv2.VideoCapture(src)
-        self.thread = Thread(target=self.update, args=())
-        self.thread.daemon = True
-        self.thread.start()
-
-    def update(self):
-        while True:
-            _, self.frame = self.capture.read()
-
-    def get_frame(self):
-        return self.frame
-
-
 class ControllerVideo:
     def __init__(self, main_controller):
+        """
+
+        Args:
+            main_controller:
+        """
         self.main_controller = main_controller
         self.ret = []
         self.cap = []
@@ -78,17 +68,6 @@ class ControllerVideo:
             except:
                 pass
 
-    # def update_properties_anypoint(self):
-    #     print("here is update maps for all images")
-    #     keys = list(self.main_controller.model.properties_image)
-    #     for i in range(self.main_controller.model.total_camera_used):
-    #         self.map_x_panorama.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_x_panorama"]))
-    #         self.map_y_panorama.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_y_panorama"]))
-    #         self.map_x_reverse.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_x_reverse"]))
-    #         self.map_y_reverse.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_y_reverse"]))
-    #         self.map_x_anypoint.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_x_anypoint"]))
-    #         self.map_y_anypoint.append(np.load(self.main_controller.model.properties_image[keys[i]]["map_y_anypoint"]))
-
     def next_frame(self):
         print(self.mode_view)
         for i, cap in enumerate(self.cap):
@@ -105,14 +84,6 @@ class ControllerVideo:
             elif self.mode_view == "original":
                 self.main_controller.model.bird_view_video = merge_original_image(
                     self.main_controller.model.list_frame_video)
-            elif self.mode_view == "rear_wide":
-                self.main_controller.model.bird_view_video = self.main_controller.anypoint(3)
-            elif self.mode_view == "front_wide":
-                self.main_controller.model.bird_view_video = self.main_controller.anypoint(0)
-            elif self.mode_view == "right_left":
-                self.main_controller.model.bird_view_video = self.main_controller.anypoint_right_left()
-            else:
-                print("Under Development")
 
     def next_frame_thread(self):
         for i, cap in enumerate(self.cap):
@@ -126,9 +97,6 @@ class ControllerVideo:
             self.main_controller.model.union_frame_video = merge_original_image(
                 self.main_controller.model.list_frame_video)
             _, self.main_controller.model.bird_view_video = self.main_controller.process_birds_view_image("video")
-
-        # if self.record:
-        #     self.start_record.write(self.main_controller.model.bird_view_video)
 
     def stop_video(self):
         for i, cap in enumerate(self.cap):
@@ -199,3 +167,35 @@ class ControllerVideo:
         if image is not None:
             now = datetime.now()
             cv2.imwrite("../saved/image_saved/image_" + str(now) + "_.jpg", image)
+
+
+class VStream:
+    def __init__(self, src):
+        """
+        Functions construction for class VStream
+        Args:
+            src: video sources
+        """
+        self.capture = cv2.VideoCapture(src)
+        self.frame = None
+        self.thread = Thread(target=self.update, args=())
+        self.thread.daemon = True
+        self.thread.start()
+
+    def update(self):
+        """
+        Update frame multithread
+        Returns:
+
+        """
+        while True:
+            _, self.frame = self.capture.read()
+
+    def get_frame(self):
+        """
+        Getter frame everytime
+        Returns:
+        Frame: current image frame
+        """
+        return self.frame
+

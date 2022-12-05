@@ -1,4 +1,3 @@
-from src.view.total_camera_ui import Ui_Dialog
 from PyQt5 import QtWidgets
 from .view_additional_function import select_file
 
@@ -50,10 +49,8 @@ class UiImageController:
                 self.view_controller.controller.list_image_data(image[i])
                 self.view_controller.controller.list_moildev_object(parameters[i])
                 # self.view_controller.controller.list_moildev_object(filepath_parameter)
-                # self.update_icx_icy_image(i)
                 self.view_controller.calib_properties.list_properties[i]()
                 self.view_controller.controller.process_generating_anypoint_image(i)
-                self.view_controller.toolbox_activation()
                 self.view_controller.show_to_window.show_image_to_label()
 
             if len(self.view_controller.model.list_original_image) == self.view_controller.model.total_camera_used:
@@ -62,27 +59,11 @@ class UiImageController:
             else:
                 print("Not enough image resources")
 
-    def set_total_camera(self, ui_total_cam):
-        self.view_controller.model.total_camera_used = int(ui_total_cam.comboBox.currentText())
-
     def show_choose_total_camera(self):
-        self.view_controller.model.total_camera_used = None
-        windowDevice = QtWidgets.QDialog()
-        ui_total_cam = Ui_Dialog()
-        ui_total_cam.setupUi(windowDevice)
-        ui_total_cam.buttonBox.accepted.connect(lambda: self.set_total_camera(ui_total_cam))
-        windowDevice.exec()
+        """
+        set camera used is four camera (image)
+        Returns:
 
-    def update_icx_icy_image(self, i):
-        if i == 0:
-            self.view_controller.calib_properties.config_image_1.update_icx_icy()
-        elif i == 1:
-            self.view_controller.calib_properties.config_image_2.update_icx_icy()
-        elif i == 2:
-            self.view_controller.calib_properties.config_image_3.update_icx_icy()
-        elif i == 3:
-            self.view_controller.calib_properties.config_image_4.update_icx_icy()
-        elif i == 4:
-            self.view_controller.calib_properties.config_image_5.update_icx_icy()
-        elif i == 5:
-            self.view_controller.calib_properties.config_image_6.update_icx_icy()
+        """
+        self.view_controller.model.total_camera_used = 4
+
