@@ -1,7 +1,6 @@
 import cv2
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import Qt
-from src.view.main_ui_2 import Ui_calibration_birds_view
 from .set_icon_widget import SetIconUserInterface
 from .view_additional_function import show_image_to_label, draw_point
 from .ui_video_controller import UiVideoController
@@ -12,9 +11,9 @@ from .ui_show_result import UiShowResult
 
 
 class Controller(QMainWindow):
-    def __init__(self, controller):
+    def __init__(self, controller, ui):
         super().__init__()
-        self.main_ui = Ui_calibration_birds_view()
+        self.main_ui = ui
         self.main_ui.setupUi(self)
 
         self.set_icon = SetIconUserInterface(self.main_ui)

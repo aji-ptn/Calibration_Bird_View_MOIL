@@ -13,7 +13,7 @@ from .controller_video import ControllerVideo
 class MainModel:
     def __init__(self):
         """
-
+        This is object constructor of class MainModel
         """
         super().__init__()
 
@@ -38,26 +38,23 @@ class MainModel:
         self.config_file = "../data_config/config.yaml"
 
     def save_image_calibration(self):
+        """
+        Save image Calibration
+        Returns:
+
+        """
         x = datetime.datetime.now()
         print("saved")
         time = x.strftime("%Y_%m_%d_%H_%M_%S")
         cv2.imwrite("../saved/image_saved/overlap_" + time + ".jpg", self.model.overlap_image)
         cv2.imwrite("../saved/image_saved/bird_view_" + time + ".jpg", self.model.bird_view_image)
 
-    def change_slider_zoom(self, value):
-        self.model.zoom_control = value
-
-    def change_zoom_plus(self):
-        value = int(self.model.zoom_control)
-        if value < 30:
-            self.model.zoom_control = value + 1
-
-    def change_zoom_minus(self):
-        value = int(self.model.zoom_control)
-        if value > 0:
-            self.model.zoom_control = value - 1
-
     def initialize_image_data(self):
+        """
+        Initialization image data parameter
+        Returns:
+
+        """
         self.map_x_panorama = [None] * self.model.total_camera_used
         self.map_y_panorama = [None] * self.model.total_camera_used
         self.map_x_reverse = [None] * self.model.total_camera_used
@@ -74,9 +71,9 @@ class MainModel:
 
     def list_image_data(self, filepath_image):
         """
-
+        List of image original
         Args:
-            filepath_image:
+            filepath_image: path of the images
 
         Returns:
 
@@ -86,9 +83,9 @@ class MainModel:
 
     def list_moildev_object(self, filepath_parameter):
         """
-
+        Create moildev object
         Args:
-            filepath_parameter:
+            filepath_parameter: path of moildev parameters
 
         Returns:
 
@@ -102,7 +99,7 @@ class MainModel:
         """
 
         Args:
-            mode (): blending mode. - H = Horizontal - V = Vertical
+            mode: blending mode. - H = Horizontal - V = Vertical
 
         Returns:
 
@@ -184,8 +181,8 @@ class MainModel:
         image_3 = cv2.rotate(image[3], cv2.ROTATE_180)
         image_crop.append(self.cropping_anypoint_image(image_3, 3))
         self.model.list_image_crop_anypoint = image_crop
-        for i, image in enumerate(image_crop):
-            cv2.imwrite("image_crop" + str(i) + ".jpg", image)
+        # for i, image in enumerate(image_crop):
+        #     cv2.imwrite("image_crop" + str(i) + ".jpg", image)
 
         if self.mode_calib == "Normal":
             merge_image_canvas, bird_view = merge_image_4_camera_center_config(image_crop,

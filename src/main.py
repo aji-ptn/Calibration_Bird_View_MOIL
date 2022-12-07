@@ -1,6 +1,7 @@
 import sys
 from model.main_model import MainModel
 from controller.ui_main_controller import Controller
+from view.main_ui_2 import Ui_calibration_birds_view
 from PyQt5.QtWidgets import QApplication
 from view import main_ui_2
 
@@ -14,7 +15,8 @@ class App(QApplication):
         """
         super(App, self).__init__(sys_argv)
         self.main_ctrl = MainModel()
-        self.main_view = Controller(self.main_ctrl)
+        self.ui = Ui_calibration_birds_view()
+        self.main_view = Controller(self.main_ctrl, self.ui)
         self.main_view.show()
 
 

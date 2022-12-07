@@ -33,8 +33,10 @@ release = '1.0'
 extensions = ["sphinx.ext.autodoc",
               "sphinx.ext.viewcode",
               "sphinx.ext.napoleon",
-              "myst_parser"
+              # "myst_parser"
+              "m2r",
               ]
+source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -58,7 +60,7 @@ html_static_path = []
 master_doc = 'index'
 
 autoclass_content = 'both'
-autodoc_mock_imports = ["src"]
+autodoc_mock_imports = ["src", "assets"]
 html_show_sourcelink = False
 
 autodoc_default_flags = ['members']
