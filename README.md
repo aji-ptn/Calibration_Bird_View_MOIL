@@ -28,9 +28,9 @@ This Repository for calibration birds view using MOIL Method. the progress under
    python3 main.py
    ```
 
-![img.png](_images/home.png)
+![img.png](assets/home.png)
 
 ### Data Example
 Open data example to image example in image save
 
-![img.png](_images/data_example.png)
+![img.png](assets/data_example.png)
