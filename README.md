@@ -1,6 +1,10 @@
 This Repository for calibration birds view using MOIL Method. the progress under developing. will update soon
 
 ### How to install
+Please open this link to run this repository 
+
+https://docs.google.com/presentation/d/1aq64koepGS7CWYBXGwLq8ILQDAso3-xLTCFfQcSFtZQ/edit?usp=sharing 
+
 #### Clone Repository
 1. Use this command to clone the repository
     ```
