@@ -4,7 +4,7 @@ This Repository for calibration birds view using MOIL Method. the progress under
 #### Clone Repository
 1. Use this command to clone the repository
     ```
-    git clone https://github.com/aji-ptn/calibration_bird_view_MOIL.git
+    git clone https://github.com/aji-ptn/Calibration_Bird_View_MOIL.git
     ```
 
 2. Create virtual environment
