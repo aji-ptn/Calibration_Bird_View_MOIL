@@ -14,7 +14,7 @@ https://docs.google.com/presentation/d/1aq64koepGS7CWYBXGwLq8ILQDAso3-xLTCFfQcSF
 2. Create virtual environment
    - Open your terminal in clone directory
    ```
-   cd calibration_bird_view_MOIL
+   cd Calibration_Bird_View_MOIL
    ```
    - Create env using python 3.8
    ```
