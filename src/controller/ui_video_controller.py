@@ -2,7 +2,7 @@ import os
 import time
 import cv2
 import numpy as np
-from PyQt5 import QtCore, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 from .view_additional_function import select_file
 from threading import Thread
 

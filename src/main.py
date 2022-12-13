@@ -2,7 +2,7 @@ import sys
 from model.main_model import MainModel
 from controller.ui_main_controller import Controller
 from view.main_ui_2 import Ui_calibration_birds_view
-from PyQt5.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication
 from view import main_ui_2
 
 
@@ -22,4 +22,4 @@ class App(QApplication):
 
 if __name__ == "__main__":
     app = App(sys.argv)
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

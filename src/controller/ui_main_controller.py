@@ -1,6 +1,6 @@
 import cv2
-from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QApplication
+from PyQt6.QtCore import Qt
 from .set_icon_widget import SetIconUserInterface
 from .view_additional_function import show_image_to_label, draw_point
 from .ui_video_controller import UiVideoController

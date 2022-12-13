@@ -1,4 +1,4 @@
-from PyQt5 import QtGui, QtCore
+from PyQt6 import QtGui, QtCore
 
 
 class SetIconUserInterface(object):

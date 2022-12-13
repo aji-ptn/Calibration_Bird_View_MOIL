@@ -1,5 +1,5 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication
 from .view_additional_function import calculate_ratio_image
 
 

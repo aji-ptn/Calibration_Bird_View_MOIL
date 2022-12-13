@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt
+from PyQt6.QtCore import Qt
 from .view_additional_function import calculate_ratio_image
 
 
