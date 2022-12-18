@@ -33,12 +33,12 @@ class ConfigurationImage2:
         This change_properties_center_image_2_event function will be used to control alpha & beta
         each action of the part image 2 in the user interface frame
         """
-        self.view_controller.model.properties_image["Image_2"]["alpha"] = self.view_controller.main_ui.val_alpha_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["beta"] = self.view_controller.main_ui.val_beta_image_2.value()
-        self.view_controller.controller.process_generating_anypoint_image(1)
+        self.view_controller.model.model_data.properties_image["Image_2"]["alpha"] = self.view_controller.main_ui.val_alpha_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["beta"] = self.view_controller.main_ui.val_beta_image_2.value()
+        self.view_controller.model.process_generating_anypoint_image(1)
         self.view_controller.show_to_window.show_overlay_and_birds_view()
-        if self.view_controller.model.list_frame_video:
-            self.view_controller.controller.update_properties_anypoint()
+        if self.view_controller.model.model_data.list_frame_video:
+            self.view_controller.model.update_properties_anypoint()
             self.view_controller.show_to_window.showing_video_result()
 
     def change_properties_anypoint(self):
@@ -46,12 +46,12 @@ class ConfigurationImage2:
         The change_properties_anypoint_image_2 function will be used control zoom & rotate
         each acton of the part image 2 in the user interface frame
         """
-        self.view_controller.model.properties_image["Image_2"]["zoom"] = self.view_controller.main_ui.val_zoom_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["rotate"] = self.view_controller.main_ui.val_rotate_image_2.value()
-        self.view_controller.controller.process_generating_anypoint_image(1)
+        self.view_controller.model.model_data.properties_image["Image_2"]["zoom"] = self.view_controller.main_ui.val_zoom_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["rotate"] = self.view_controller.main_ui.val_rotate_image_2.value()
+        self.view_controller.model.process_generating_anypoint_image(1)
         self.view_controller.show_to_window.show_overlay_and_birds_view()
-        if self.view_controller.model.list_frame_video:
-            self.view_controller.controller.update_properties_anypoint()
+        if self.view_controller.model.model_data.list_frame_video:
+            self.view_controller.model.update_properties_anypoint()
             self.view_controller.show_to_window.showing_video_result()
 
     def change_properties_overlay(self):
@@ -59,8 +59,8 @@ class ConfigurationImage2:
         The change_properties_overlay_image_2 function will be used control shift_x & shift_y
         each acton of the part image 2 in the user interface frame
         """
-        self.view_controller.model.properties_image["Image_2"]["shift_x"] = self.view_controller.main_ui.val_coordinate_x_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["shift_y"] = self.view_controller.main_ui.val_coordinate_y_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["shift_x"] = self.view_controller.main_ui.val_coordinate_x_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["shift_y"] = self.view_controller.main_ui.val_coordinate_y_image_2.value()
         self.view_controller.show_to_window.show_overlay_and_birds_view()
 
     def change_properties_cropping(self):
@@ -68,10 +68,10 @@ class ConfigurationImage2:
         The change_properties_cropping_image_2 function will be used control crop_top, crop_bottom,
         crop_left & crop_right each acton of the part image 2 in the user interface frame
         """
-        self.view_controller.model.properties_image["Image_2"]["crop_top"] = self.view_controller.main_ui.val_crop_top_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_bottom"] = self.view_controller.main_ui.val_crop_bottom_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_left"] = self.view_controller.main_ui.val_crop_left_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_right"] = self.view_controller.main_ui.val_crop_right_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_top"] = self.view_controller.main_ui.val_crop_top_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_bottom"] = self.view_controller.main_ui.val_crop_bottom_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_left"] = self.view_controller.main_ui.val_crop_left_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_right"] = self.view_controller.main_ui.val_crop_right_image_2.value()
         self.view_controller.show_to_window.show_overlay_and_birds_view()
 
     def update_properties(self):
@@ -79,33 +79,33 @@ class ConfigurationImage2:
         The update_properties_image_2 function. The data is come from user interface control by user and will
         store on the model class
         """
-        self.view_controller.model.properties_image["Image_2"] = {}
-        self.view_controller.model.properties_image["Image_2"]["alpha"] = self.view_controller.main_ui.val_alpha_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["beta"] = self.view_controller.main_ui.val_beta_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["zoom"] = self.view_controller.main_ui.val_zoom_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["rotate"] = self.view_controller.main_ui.val_rotate_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["shift_x"] = self.view_controller.main_ui.val_coordinate_x_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["shift_y"] = self.view_controller.main_ui.val_coordinate_y_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_top"] = self.view_controller.main_ui.val_crop_top_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_bottom"] = self.view_controller.main_ui.val_crop_bottom_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_left"] = self.view_controller.main_ui.val_crop_left_image_2.value()
-        self.view_controller.model.properties_image["Image_2"]["crop_right"] = self.view_controller.main_ui.val_crop_right_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"] = {}
+        self.view_controller.model.model_data.properties_image["Image_2"]["alpha"] = self.view_controller.main_ui.val_alpha_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["beta"] = self.view_controller.main_ui.val_beta_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["zoom"] = self.view_controller.main_ui.val_zoom_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["rotate"] = self.view_controller.main_ui.val_rotate_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["shift_x"] = self.view_controller.main_ui.val_coordinate_x_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["shift_y"] = self.view_controller.main_ui.val_coordinate_y_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_top"] = self.view_controller.main_ui.val_crop_top_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_bottom"] = self.view_controller.main_ui.val_crop_bottom_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_left"] = self.view_controller.main_ui.val_crop_left_image_2.value()
+        self.view_controller.model.model_data.properties_image["Image_2"]["crop_right"] = self.view_controller.main_ui.val_crop_right_image_2.value()
 
     def load_config(self):
         """
         Load config from file and put value in user interface
         """
         self.block_signal()
-        self.view_controller.main_ui.val_alpha_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["alpha"])
-        self.view_controller.main_ui.val_beta_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["beta"])
-        self.view_controller.main_ui.val_zoom_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["zoom"])
-        self.view_controller.main_ui.val_rotate_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["rotate"])
-        self.view_controller.main_ui.val_coordinate_x_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["shift_x"])
-        self.view_controller.main_ui.val_coordinate_y_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["shift_y"])
-        self.view_controller.main_ui.val_crop_top_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["crop_top"])
-        self.view_controller.main_ui.val_crop_bottom_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["crop_bottom"])
-        self.view_controller.main_ui.val_crop_left_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["crop_left"])
-        self.view_controller.main_ui.val_crop_right_image_2.setValue(self.view_controller.model.properties_image["Image_2"]["crop_right"])
+        self.view_controller.main_ui.val_alpha_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["alpha"])
+        self.view_controller.main_ui.val_beta_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["beta"])
+        self.view_controller.main_ui.val_zoom_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["zoom"])
+        self.view_controller.main_ui.val_rotate_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["rotate"])
+        self.view_controller.main_ui.val_coordinate_x_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["shift_x"])
+        self.view_controller.main_ui.val_coordinate_y_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["shift_y"])
+        self.view_controller.main_ui.val_crop_top_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["crop_top"])
+        self.view_controller.main_ui.val_crop_bottom_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["crop_bottom"])
+        self.view_controller.main_ui.val_crop_left_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["crop_left"])
+        self.view_controller.main_ui.val_crop_right_image_2.setValue(self.view_controller.model.model_data.properties_image["Image_2"]["crop_right"])
         self.unblock_signal()
 
     def block_signal(self):

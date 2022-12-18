@@ -23,9 +23,9 @@ class UiShowResult:
         self.view_controller.main_ui.button_zoom_out_video.clicked.connect(self.zoom_out_video)
 
     def show_overlay_and_birds_view(self):
-        self.view_controller.controller.update_overlay_and_birds_view_image()
-        image_overlay = self.view_controller.model.overlap_image
-        image_birds_view = self.view_controller.model.bird_view_image
+        self.view_controller.model.update_overlay_and_birds_view_image()
+        image_overlay = self.view_controller.model.model_data.overlap_image
+        image_birds_view = self.view_controller.model.model_data.bird_view_image
         if image_overlay is not None:
             show_image_to_label(self.view_controller.main_ui.label_window_overlay_image, image_overlay,
                                 self.width_overlay_image)
@@ -38,19 +38,19 @@ class UiShowResult:
         Returns:
 
         """
-        self.view_controller.controller.update_union_original_image()
-        image = self.view_controller.model.union_original_image
+        self.view_controller.model.update_union_original_image()
+        image = self.view_controller.model.model_data.union_original_image
         if image is not None:
             show_image_to_label(self.view_controller.main_ui.label_8, image, 720)
 
     def showing_video_result(self):
         # if mode_view == "birds_view":
-        self.view_controller.controller.control_video.next_frame()
+        self.view_controller.model.control_video.next_frame()
         show_image_to_label(self.view_controller.main_ui.label, self.view_controller.model.bird_view_video,
                             self.width_result_video)
 
         # elif mode_view == "original":
-        #     self.view_controller.controller.control_video.next_frame(mode_view)
+        #     self.view_controller.model.control_video.next_frame(mode_view)
         #     show_image_to_label(self.view_controller.main_ui.label, self.view_controller.model.union_frame_video,
         #                         self.width_result_video)
 

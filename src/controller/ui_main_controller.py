@@ -11,7 +11,14 @@ from .ui_show_result import UiShowResult
 
 
 class Controller(QMainWindow):
-    def __init__(self, controller, ui):
+    def __init__(self, model, ui):
+        """
+        Main controller contain logic and connected to main ui
+
+        Args:
+            controller:
+            ui:
+        """
         super().__init__()
         self.main_ui = ui
         self.main_ui.setupUi(self)
@@ -19,14 +26,16 @@ class Controller(QMainWindow):
         self.set_icon = SetIconUserInterface(self.main_ui)
         self.showMaximized()
 
-        self.controller = controller
-        self.model = self.controller.model
+        self.model = model
+        # self.model = self.controller.model
 
         self.ui_video_controller = UiVideoController(self)
         self.ui_image_controller = UiImageController(self)
         self.control_widget = ControlWidget(self)
         self.calib_properties = CalibProperties(self)
         self.show_to_window = UiShowResult(self)
+        self.main_ui.radio_button_blend_diagonal.hide()
+        self.main_ui.radio_button_blend_vertical.hide()
 
         self.width_alignment_1 = 360
         self.width_alignment_2 = 360
@@ -42,14 +51,14 @@ class Controller(QMainWindow):
 
     def change_gradient_mode(self):
         if self.main_ui.radio_button_blend_horizontal.isChecked():
-            self.controller.change_gradient_mode("H")
+            self.model.change_gradient_mode_("H")
         elif self.main_ui.radio_button_blend_vertical.isChecked():
-            self.controller.change_gradient_mode("V")
+            self.model.change_gradient_mode_("V")
         elif self.main_ui.radio_button_blend_diagonal.isChecked():
-            self.controller.change_gradient_mode("D")
+            self.model.change_gradient_mode_("D")
         elif self.main_ui.radio_button_overlap.isChecked():
-            self.controller.change_gradient_mode("O")
-        if self.model.list_original_image:
+            self.model.change_gradient_mode_("O")
+        if self.model.model_data.list_original_image:
             self.show_to_window.show_overlay_and_birds_view()
 
     @staticmethod

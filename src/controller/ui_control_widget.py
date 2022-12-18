@@ -19,14 +19,8 @@ class ControlWidget:
             self.ui_main_controller.main_ui.frame_mode_view.hide()
 
     def initial_toolbox_configuration(self):
-        if self.ui_main_controller.model.total_camera_used == 4:
-            self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(4, False)
-            self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(5, False)
-        elif self.ui_main_controller.model.total_camera_used == 6:
-            self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(4, True)
-            self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(5, True)
-        else:
-            print("Under development")
+        self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(4, False)
+        self.ui_main_controller.main_ui.toolbox_configuration.setItemEnabled(5, False)
 
     def hide_show_frame_video_viewer(self):
         if self.ui_main_controller.main_ui.button_run_video.isChecked():

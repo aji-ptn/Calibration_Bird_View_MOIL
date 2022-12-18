@@ -14,9 +14,9 @@ class App(QApplication):
             sys_argv
         """
         super(App, self).__init__(sys_argv)
-        self.main_ctrl = MainModel()
+        self.main_model = MainModel()
         self.ui = Ui_calibration_birds_view()
-        self.main_view = Controller(self.main_ctrl, self.ui)
+        self.main_view = Controller(self.main_model, self.ui)
         self.main_view.show()
 
 

@@ -12,11 +12,11 @@ class UiImageController:
         The select_source_image function will open a dialog to search the file image from the directory.
         """
         self.show_choose_total_camera()
-        if self.view_controller.model.total_camera_used is not None:
+        if self.view_controller.model.model_data.total_camera_used is not None:
             self.view_controller.calib_properties.initialize_properties()
             self.view_controller.control_widget.initial_toolbox_configuration()
 
-            for i in range(self.view_controller.model.total_camera_used):
+            for i in range(self.view_controller.model.model_data.total_camera_used):
                 filepath_image = select_file(None, "Select Image !!", "",
                                              "Image Files (*.jpeg *.jpg *.png *.gif *.bmg)")
 
@@ -26,15 +26,15 @@ class UiImageController:
 
                     if filepath_parameter:
 
-                        self.view_controller.controller.list_image_data(filepath_image)
-                        self.view_controller.controller.list_moildev_object(filepath_parameter)
+                        self.view_controller.model.list_image_data(filepath_image)
+                        self.view_controller.model.list_moildev_object(filepath_parameter)
                         self.view_controller.calib_properties.list_properties[i]()
-                        self.view_controller.controller.process_generating_anypoint_image(i)
+                        self.view_controller.model.process_generating_anypoint_image(i)
                         self.view_controller.show_to_window.show_image_to_label()
 
-            if len(self.view_controller.model.list_original_image) == self.view_controller.model.total_camera_used:
+            if len(self.view_controller.model.model_data.list_original_image) == self.view_controller.model.model_data.total_camera_used:
                 self.view_controller.show_to_window.show_overlay_and_birds_view()
-                self.view_controller.model.list_reverse_alignment = self.view_controller.model.list_reverse_image
+                # self.view_controller.model.model_data.list_reverse_alignment = self.view_controller.model.model_data.list_reverse_image
             else:
                 print("Not enough image resources")
 
@@ -44,14 +44,14 @@ class UiImageController:
         Returns:
 
         """
-        self.view_controller.model.total_camera_used = 4
+        self.view_controller.model.model_data.total_camera_used = 4
 
     # def select_source_image(self):
     #     """
     #     The select_source_image function will open a dialog to search the file image from the directory.
     #     """
     #     self.show_choose_total_camera()
-    #     if self.view_controller.model.total_camera_used is not None:
+    #     if self.view_controller.model.model_data.total_camera_used is not None:
     #         self.view_controller.calib_properties.initialize_properties()
     #         self.view_controller.control_widget.initial_toolbox_configuration()
     #
@@ -75,7 +75,7 @@ class UiImageController:
     #                       "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json",
     #                       "/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json"]
     #
-    #         for i in range(self.view_controller.model.total_camera_used):
+    #         for i in range(self.view_controller.model.model_data.total_camera_used):
     #             # filepath_image = select_file(None, "Select Image !!", "",
     #             #                              "Image Files (*.jpeg *.jpg *.png *.gif *.bmg)")
     #             #
@@ -84,16 +84,16 @@ class UiImageController:
     #             #                                      "Parameter Files (*.json *.txt)")
     #             #
     #             #     if filepath_parameter:
-    #             # self.view_controller.controller.list_image_data(filepath_image)
-    #             self.view_controller.controller.list_image_data(image[i])
-    #             self.view_controller.controller.list_moildev_object(parameters[i])
-    #             # self.view_controller.controller.list_moildev_object(filepath_parameter)
+    #             # self.view_controller.model.list_image_data(filepath_image)
+    #             self.view_controller.model.list_image_data(image[i])
+    #             self.view_controller.model.list_moildev_object(parameters[i])
+    #             # self.view_controller.model.list_moildev_object(filepath_parameter)
     #             self.view_controller.calib_properties.list_properties[i]()
-    #             self.view_controller.controller.process_generating_anypoint_image(i)
+    #             self.view_controller.model.process_generating_anypoint_image(i)
     #             self.view_controller.show_to_window.show_image_to_label()
     #
-    #         if len(self.view_controller.model.list_original_image) == self.view_controller.model.total_camera_used:
+    #         if len(self.view_controller.model.model_data.list_original_image) == self.view_controller.model.model_data.total_camera_used:
     #             self.view_controller.show_to_window.show_overlay_and_birds_view()
-    #             self.view_controller.model.list_reverse_alignment = self.view_controller.model.list_reverse_image
+    #             self.view_controller.model.model_data.list_reverse_alignment = self.view_controller.model.list_reverse_image
     #         else:
     #             print("Not enough image resources")
