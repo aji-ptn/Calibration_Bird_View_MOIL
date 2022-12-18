@@ -13,7 +13,7 @@ from .controller_video import ControllerVideo
 class MainModel:
     def __init__(self):
         """
-        This is object constructor of class MainModel
+
         """
         super().__init__()
 

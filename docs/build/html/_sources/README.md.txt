@@ -19,7 +19,7 @@ This Repository for calibration birds view using MOIL Method. the progress under
    ```
    - Install requirements
    ```
-   pip install -r requirementspyqt5.txt 
+   pip install -r requirements.txt 
    ```
    
 3. Run the program
@@ -33,4 +33,8 @@ This Repository for calibration birds view using MOIL Method. the progress under
 ### Data Example
 Open data example to image example in image save
 
+#### 1. Image sources
 ![img.png](../../assets/data_example.png)
+
+#### 2. Image result
+![img.png](../../assets/bird_view.jpg)

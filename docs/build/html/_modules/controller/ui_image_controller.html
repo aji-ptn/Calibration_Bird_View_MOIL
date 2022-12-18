@@ -37,9 +37,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation_guide.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api_reference.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../release_note.html">Release Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About.html">Overview</a></li>
 </ul>
 
         </div>
@@ -67,7 +68,7 @@
            <div itemprop="articleBody">
              
   <h1>Source code for controller.ui_image_controller</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+<span></span><span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
 <span class="kn">from</span> <span class="nn">.view_additional_function</span> <span class="kn">import</span> <span class="n">select_file</span>
 
 
@@ -81,11 +82,11 @@
 <span class="sd">        The select_source_image function will open a dialog to search the file image from the directory.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">show_choose_total_camera</span><span class="p">()</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">total_camera_used</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">total_camera_used</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">calib_properties</span><span class="o">.</span><span class="n">initialize_properties</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">control_widget</span><span class="o">.</span><span class="n">initial_toolbox_configuration</span><span class="p">()</span>
 
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">total_camera_used</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">total_camera_used</span><span class="p">):</span>
                 <span class="n">filepath_image</span> <span class="o">=</span> <span class="n">select_file</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Select Image !!&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
                                              <span class="s2">&quot;Image Files (*.jpeg *.jpg *.png *.gif *.bmg)&quot;</span><span class="p">)</span>
 
@@ -95,15 +96,15 @@
 
                     <span class="k">if</span> <span class="n">filepath_parameter</span><span class="p">:</span>
 
-                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">list_image_data</span><span class="p">(</span><span class="n">filepath_image</span><span class="p">)</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">list_moildev_object</span><span class="p">(</span><span class="n">filepath_parameter</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_image_data</span><span class="p">(</span><span class="n">filepath_image</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_moildev_object</span><span class="p">(</span><span class="n">filepath_parameter</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">calib_properties</span><span class="o">.</span><span class="n">list_properties</span><span class="p">[</span><span class="n">i</span><span class="p">]()</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">process_generating_anypoint_image</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">process_generating_anypoint_image</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">show_to_window</span><span class="o">.</span><span class="n">show_image_to_label</span><span class="p">()</span>
 
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_original_image</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">total_camera_used</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">list_original_image</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">total_camera_used</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">show_to_window</span><span class="o">.</span><span class="n">show_overlay_and_birds_view</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_reverse_alignment</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_reverse_image</span>
+                <span class="c1"># self.view_controller.model.model_data.list_reverse_alignment = self.view_controller.model.model_data.list_reverse_image</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough image resources&quot;</span><span class="p">)</span></div>
 
@@ -113,14 +114,14 @@
 <span class="sd">        Returns:</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">total_camera_used</span> <span class="o">=</span> <span class="mi">4</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view_controller</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">total_camera_used</span> <span class="o">=</span> <span class="mi">4</span></div></div>
 
     <span class="c1"># def select_source_image(self):</span>
     <span class="c1">#     &quot;&quot;&quot;</span>
     <span class="c1">#     The select_source_image function will open a dialog to search the file image from the directory.</span>
     <span class="c1">#     &quot;&quot;&quot;</span>
     <span class="c1">#     self.show_choose_total_camera()</span>
-    <span class="c1">#     if self.view_controller.model.total_camera_used is not None:</span>
+    <span class="c1">#     if self.view_controller.model.model_data.total_camera_used is not None:</span>
     <span class="c1">#         self.view_controller.calib_properties.initialize_properties()</span>
     <span class="c1">#         self.view_controller.control_widget.initial_toolbox_configuration()</span>
     <span class="c1">#</span>
@@ -144,7 +145,7 @@
     <span class="c1">#                       &quot;/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json&quot;,</span>
     <span class="c1">#                       &quot;/home/aji/Documents/MyGithub/calib_bird_view_MOIL/parameters/20220706_entaniya_vr220_1_2592x1944_moil230_andy.json&quot;]</span>
     <span class="c1">#</span>
-    <span class="c1">#         for i in range(self.view_controller.model.total_camera_used):</span>
+    <span class="c1">#         for i in range(self.view_controller.model.model_data.total_camera_used):</span>
     <span class="c1">#             # filepath_image = select_file(None, &quot;Select Image !!&quot;, &quot;&quot;,</span>
     <span class="c1">#             #                              &quot;Image Files (*.jpeg *.jpg *.png *.gif *.bmg)&quot;)</span>
     <span class="c1">#             #</span>
@@ -153,17 +154,17 @@
     <span class="c1">#             #                                      &quot;Parameter Files (*.json *.txt)&quot;)</span>
     <span class="c1">#             #</span>
     <span class="c1">#             #     if filepath_parameter:</span>
-    <span class="c1">#             # self.view_controller.controller.list_image_data(filepath_image)</span>
-    <span class="c1">#             self.view_controller.controller.list_image_data(image[i])</span>
-    <span class="c1">#             self.view_controller.controller.list_moildev_object(parameters[i])</span>
-    <span class="c1">#             # self.view_controller.controller.list_moildev_object(filepath_parameter)</span>
+    <span class="c1">#             # self.view_controller.model.list_image_data(filepath_image)</span>
+    <span class="c1">#             self.view_controller.model.list_image_data(image[i])</span>
+    <span class="c1">#             self.view_controller.model.list_moildev_object(parameters[i])</span>
+    <span class="c1">#             # self.view_controller.model.list_moildev_object(filepath_parameter)</span>
     <span class="c1">#             self.view_controller.calib_properties.list_properties[i]()</span>
-    <span class="c1">#             self.view_controller.controller.process_generating_anypoint_image(i)</span>
+    <span class="c1">#             self.view_controller.model.process_generating_anypoint_image(i)</span>
     <span class="c1">#             self.view_controller.show_to_window.show_image_to_label()</span>
     <span class="c1">#</span>
-    <span class="c1">#         if len(self.view_controller.model.list_original_image) == self.view_controller.model.total_camera_used:</span>
+    <span class="c1">#         if len(self.view_controller.model.model_data.list_original_image) == self.view_controller.model.model_data.total_camera_used:</span>
     <span class="c1">#             self.view_controller.show_to_window.show_overlay_and_birds_view()</span>
-    <span class="c1">#             self.view_controller.model.list_reverse_alignment = self.view_controller.model.list_reverse_image</span>
+    <span class="c1">#             self.view_controller.model.model_data.list_reverse_alignment = self.view_controller.model.list_reverse_image</span>
     <span class="c1">#         else:</span>
     <span class="c1">#             print(&quot;Not enough image resources&quot;)</span>
 </pre></div>

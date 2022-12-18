@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Release Note" href="release_note.html" />
+    <link rel="next" title="Overview" href="About.html" />
     <link rel="prev" title="Installation Guide" href="installation_guide.html" /> 
 </head>
 
@@ -40,6 +40,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_guide.html">Installation Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#wellcome-to-calibration-bird-view-using-moil-method">Wellcome to Calibration Bird View Using MOIL Method</a><ul>
@@ -55,7 +56,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="release_note.html">Release Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">Overview</a></li>
 </ul>
 
         </div>
@@ -109,8 +110,17 @@
 <span id="b-controller-class-reference"></span><h3>b. Controller class reference:<a class="headerlink" href="#module-controller.ui_main_controller" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="controller.ui_main_controller.Controller">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controller.ui_main_controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ui</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/ui_main_controller.html#Controller"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controller.ui_main_controller.Controller" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controller.ui_main_controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ui</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/ui_main_controller.html#Controller"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controller.ui_main_controller.Controller" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<p>Main controller contain logic and connected to main ui</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – </p></li>
+<li><p><strong>ui</strong> – </p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="controller.ui_main_controller.Controller.connect_event_button">
 <span class="sig-name descname"><span class="pre">connect_event_button</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/ui_main_controller.html#Controller.connect_event_button"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controller.ui_main_controller.Controller.connect_event_button" title="Permalink to this definition"></a></dt>
@@ -159,7 +169,6 @@ Returns:</p>
 <dt class="sig sig-object py" id="model.main_model.MainModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.main_model.</span></span><span class="sig-name descname"><span class="pre">MainModel</span></span><a class="reference internal" href="_modules/model/main_model.html#MainModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.main_model.MainModel" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is object constructor of class MainModel</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="model.main_model.MainModel.save_image_calibration">
 <span class="sig-name descname"><span class="pre">save_image_calibration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/model/main_model.html#MainModel.save_image_calibration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.main_model.MainModel.save_image_calibration" title="Permalink to this definition"></a></dt>
@@ -191,8 +200,8 @@ Returns:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="model.main_model.MainModel.change_gradient_mode">
-<span class="sig-name descname"><span class="pre">change_gradient_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'H'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/model/main_model.html#MainModel.change_gradient_mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.main_model.MainModel.change_gradient_mode" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="model.main_model.MainModel.change_gradient_mode_">
+<span class="sig-name descname"><span class="pre">change_gradient_mode_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'H'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/model/main_model.html#MainModel.change_gradient_mode_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.main_model.MainModel.change_gradient_mode_" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> – blending mode. - H = Horizontal - V = Vertical</p>
@@ -309,7 +318,7 @@ user interface frame
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation_guide.html" class="btn btn-neutral float-left" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="release_note.html" class="btn btn-neutral float-right" title="Release Note" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="About.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

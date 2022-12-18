@@ -23,7 +23,7 @@ https://docs.google.com/presentation/d/1aq64koepGS7CWYBXGwLq8ILQDAso3-xLTCFfQcSF
    ```
    - Install requirements
    ```
-   pip install -r requirementspyqt5.txt 
+   pip install -r requirements.txt 
    ```
    
 3. Run the program
@@ -37,4 +37,8 @@ https://docs.google.com/presentation/d/1aq64koepGS7CWYBXGwLq8ILQDAso3-xLTCFfQcSF
 ### Data Example
 Open data example to image example in image save
 
+#### 1. Image sources
 ![img.png](assets/data_example.png)
+
+#### 2. Image result
+![img.png](assets/bird_view.jpg)
